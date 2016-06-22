@@ -2,5 +2,4 @@
 
 class UnknownTypeException extends Exception
 {
-    
 }

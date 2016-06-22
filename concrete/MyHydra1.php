@@ -22,9 +22,10 @@ class MyHydra1 implements RobotInterface
      */
     public function __construct($with = 0, $height = 0, $speed = 0)
     {
-        if ($with < 0 || $height < 0 || $speed < 0)
-            throw new NegativeValueException("Robot must have only positive attributes.");
-        
+        if ($with < 0 || $height < 0 || $speed < 0) {
+            throw new NegativeValueException('Robot must have only positive attributes.');
+        }
+
         $this->_width = $with;
         $this->_height = $height;
         $this->_speed = $speed;

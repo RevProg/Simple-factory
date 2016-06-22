@@ -12,7 +12,7 @@ class Factory
      * 
      * @param RobotInterface $robot
      */
-    public function addType(RobotInterface $robot) 
+    public function addType(RobotInterface $robot)
     {
         $this->_robots[get_class($robot)] = $robot;
     }
@@ -30,14 +30,16 @@ class Factory
     /**
      * @param $name
      * @param $arguments
+     *
      * @return array
+     *
      * @throws UnknownTypeException
      * @throws InvalidArgumentException
      */
     public function __call($name, $arguments)
     {
         $type = str_replace('create', '', $name);
-        
+
         if (empty($this->_robots[$type])) {
             throw new UnknownTypeException();
         }
@@ -50,8 +52,9 @@ class Factory
 
         $res = [];
 
-        for ($i = 0; $i < $count; $i++)
+        for ($i = 0; $i < $count; ++$i) {
             $res[] = $this->_robots[$type];
+        }
 
         return $res;
     }

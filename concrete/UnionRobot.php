@@ -34,6 +34,7 @@ class UnionRobot implements UnionRobotInterface
 
     /**
      * @param $robot
+     *
      * @return mixed
      */
     public function addRobot($robot)
@@ -90,14 +91,16 @@ class UnionRobot implements UnionRobotInterface
      * 
      * @param RobotInterface $robot
      */
-    protected function importRobot(RobotInterface $robot) {
+    protected function importRobot(RobotInterface $robot)
+    {
         $this->_weight += $robot->getWeight();
         $this->_height += $robot->getHeight();
 
-        if (count($this->_robots) == 0)
+        if (count($this->_robots) == 0) {
             $this->_speed = $robot->getSpeed();
-        else
+        } else {
             $this->_speed = min($this->_speed, $robot->getSpeed());
+        }
 
         $this->_robots[] = $robot;
     }
