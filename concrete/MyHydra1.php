@@ -35,7 +35,7 @@ class MyHydra1 implements RobotInterface
      *
      * @return mixed
      */
-    public function getWidth()
+    public function getWeight()
     {
         return $this->_width;
     }

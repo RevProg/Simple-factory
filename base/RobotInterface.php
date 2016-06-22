@@ -3,11 +3,11 @@
 interface RobotInterface
 {
     /**
-     * Returns robot width.
+     * Returns robot weight.
      *
      * @return mixed
      */
-    public function getWidth();
+    public function getWeight();
 
     /**
      * Returns robot height.
