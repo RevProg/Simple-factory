@@ -14,3 +14,10 @@ function __autoload($className) {
             require_once $filePath;
     }
 }
+
+$factory = new Factory();
+
+$factory->addType(new MyHydra1());
+$factory->addType(new MyHydra2());
+
+var_dump($factory->createMyHydra1(5));
